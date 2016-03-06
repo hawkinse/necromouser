@@ -22,9 +22,6 @@ MainWindow::MainWindow(QWidget *parent) :
     //Add mouse modes. These must correspond in order with the modes in MouseMode!
     ui->cbProtocal->addItem("Microsoft");
     ui->cbProtocal->addItem("Mouse Systems");
-
-    //Init the slider label
-    ui->lblSensitivity->setText(QString::number((ui->hsScrollSensitivity->value())));
 }
 
 MainWindow::~MainWindow()
@@ -46,8 +43,7 @@ MainWindow::~MainWindow()
 
 void MainWindow::updateParserSettings()
 {
-    parser->ChangeSettings(ui->ckbMiddleClickEmulation->isChecked(), ui->ckbScrollEmulation->isChecked(), ui->hsScrollSensitivity->value(),
-                           ui->ckbSwapAxis->isChecked(), ui->sbXAccel->value(), ui->sbYAccel->value(), ui->ckbInvertX->isChecked(), ui->ckbInvertY->isChecked());
+    parser->ChangeSettings(ui->ckbSwapAxis->isChecked(), ui->sbXAccel->value(), ui->sbYAccel->value(), ui->ckbInvertX->isChecked(), ui->ckbInvertY->isChecked());
 }
 
 void MainWindow::initReader()
@@ -143,25 +139,9 @@ void MainWindow::onReadReady()
     delete byteBuffer;
 }
 
-void MainWindow::on_ckbMiddleClickEmulation_toggled(bool checked)
-{
-    updateParserSettings();
-}
-
-void MainWindow::on_ckbScrollEmulation_toggled(bool checked)
-{
-    updateParserSettings();
-}
-
 void MainWindow::on_pbStart_clicked()
 {
     initReader();
-}
-
-void MainWindow::on_hsScrollSensitivity_sliderMoved(int position)
-{
-    ui->lblSensitivity->setText(QString::number((position)));
-    updateParserSettings();
 }
 
 void MainWindow::on_ckbSwapAxis_clicked()

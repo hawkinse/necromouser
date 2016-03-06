@@ -45,10 +45,7 @@ private:
 
 private slots:
     void onReadReady();
-    void on_ckbMiddleClickEmulation_toggled(bool checked);
-    void on_ckbScrollEmulation_toggled(bool checked);
     void on_pbStart_clicked();
-    void on_hsScrollSensitivity_sliderMoved(int position);
     void on_ckbSwapAxis_clicked();
     void on_sbXAccel_valueChanged(int arg1);
     void on_sbYAccel_valueChanged(const QString &arg1);

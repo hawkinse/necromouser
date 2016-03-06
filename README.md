@@ -19,7 +19,6 @@ Necromouser is a C++ application enabling the use of old serial mice on modern W
 
 * At this time, if you are using a Microsoft Mode mouse, you must disable it first in Device Manager. 
 * Necromouser should be ran with administrator privileges if possible, otherwise it will not be able to interact with certain applications (ex. Task Manager).
-* Packet parsing is currently somewhat buggy with regards to middle click/scrolling emulation. If you find a button gets stuck, click/release the button with another mouse to un-stick it.
 
 ### License ###
 
