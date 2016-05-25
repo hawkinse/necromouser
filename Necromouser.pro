@@ -36,6 +36,6 @@ FORMS    += mainwindow.ui
 #USING_V110_SDK71 to work around macro redefinition issue from qextserialport
 DEFINES += "WINVER=0x0500" + "_USING_V110_SDK71_"
 
-LIBS += -L"C:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\Lib" -ladvapi32 -luser32
+LIBS += -L"C:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\Lib\AdvAPI32.Lib" -L"C:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\Lib\User32.Lib"
 
 include (3rdparty/qextserialport/src/qextserialport.pri)
